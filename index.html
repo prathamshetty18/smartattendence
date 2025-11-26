@@ -21,7 +21,7 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            background: white;
+            background: #fff;
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
             overflow: hidden;
@@ -29,18 +29,18 @@
 
         .header {
             background: linear-gradient(45deg, #2196F3, #21CBF3);
-            color: white;
+            color: #fff;
             padding: 30px;
             text-align: center;
         }
 
         .header h1 {
-            font-size: 2.5em;
+            font-size: 2.5rem;
             margin-bottom: 10px;
         }
 
         .header p {
-            font-size: 1.1em;
+            font-size: 1.05rem;
             opacity: 0.9;
         }
 
@@ -90,38 +90,38 @@
         }
 
         .btn {
-            padding: 12px 24px;
+            padding: 10px 22px;
             border: none;
             border-radius: 25px;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 0.9rem;
             font-weight: 600;
-            transition: all 0.3s ease;
+            transition: all 0.25s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .btn-primary {
             background: linear-gradient(45deg, #2196F3, #21CBF3);
-            color: white;
+            color: #fff;
         }
 
         .btn-success {
             background: linear-gradient(45deg, #4CAF50, #45a049);
-            color: white;
+            color: #fff;
         }
 
         .btn-danger {
             background: linear-gradient(45deg, #f44336, #da190b);
-            color: white;
+            color: #fff;
         }
 
         .btn-warning {
             background: linear-gradient(45deg, #ff9800, #f57c00);
-            color: white;
+            color: #fff;
         }
 
-        .btn:hover {
+        .btn:hover:not(:disabled) {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
@@ -130,6 +130,7 @@
             opacity: 0.6;
             cursor: not-allowed;
             transform: none;
+            box-shadow: none;
         }
 
         .attendance-section {
@@ -144,6 +145,8 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
+            gap: 10px;
+            flex-wrap: wrap;
         }
 
         .attendance-list {
@@ -157,7 +160,7 @@
             align-items: center;
             padding: 15px;
             margin-bottom: 10px;
-            background: white;
+            background: #fff;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             transition: transform 0.2s ease;
@@ -188,13 +191,13 @@
 
         .student-details p {
             color: #666;
-            font-size: 0.9em;
+            font-size: 0.9rem;
         }
 
         .status-badge {
             padding: 5px 12px;
             border-radius: 15px;
-            font-size: 0.8em;
+            font-size: 0.8rem;
             font-weight: 600;
             text-transform: uppercase;
         }
@@ -217,7 +220,7 @@
         }
 
         .stat-card {
-            background: white;
+            background: #fff;
             padding: 20px;
             border-radius: 15px;
             text-align: center;
@@ -225,7 +228,7 @@
         }
 
         .stat-number {
-            font-size: 2.5em;
+            font-size: 2.3rem;
             font-weight: bold;
             color: #2196F3;
             margin-bottom: 10px;
@@ -233,7 +236,7 @@
 
         .stat-label {
             color: #666;
-            font-size: 0.9em;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -242,13 +245,14 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            padding: 15px 20px;
+            padding: 12px 18px;
             border-radius: 10px;
-            color: white;
+            color: #fff;
             font-weight: 600;
             z-index: 1000;
             transform: translateX(400px);
             transition: transform 0.3s ease;
+            max-width: 280px;
         }
 
         .notification.show {
@@ -270,13 +274,19 @@
         .manual-entry {
             margin-top: 20px;
             padding: 20px;
-            background: white;
+            background: #fff;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+
+        .manual-entry h4 {
+            margin-bottom: 10px;
+            text-align: left;
         }
 
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .form-group label {
@@ -284,14 +294,15 @@
             margin-bottom: 5px;
             font-weight: 600;
             color: #333;
+            font-size: 0.9rem;
         }
 
         .form-group input {
             width: 100%;
-            padding: 10px;
+            padding: 8px 10px;
             border: 2px solid #ddd;
             border-radius: 5px;
-            font-size: 14px;
+            font-size: 0.9rem;
             transition: border-color 0.3s ease;
         }
 
@@ -306,7 +317,7 @@
             }
             
             .header h1 {
-                font-size: 2em;
+                font-size: 2rem;
             }
             
             .main-content {
@@ -319,7 +330,7 @@
     <div class="container">
         <div class="header">
             <h1>📚 Smart Attendance System</h1>
-            <p>Advanced facial recognition attendance tracking</p>
+            <p>Facial-recognition-inspired prototype for attendance tracking</p>
         </div>
 
         <div class="main-content">
@@ -341,6 +352,7 @@
                     <div class="stat-label">Attendance Rate</div>
                 </div>
             </div>
+
             <div class="camera-section">
                 <div class="camera-container">
                     <h3>📷 Camera Feed</h3>
@@ -359,29 +371,34 @@
                 <div class="camera-container">
                     <h3>📸 Captured Image</h3>
                     <div class="video-container">
-                        <img id="capturedImage" style="width: 100%; max-width: 400px; height: 300px; border-radius: 10px; object-fit: cover; background: #f0f0f0;" alt="Captured image will appear here">
+                        <img 
+                            id="capturedImage"
+                            style="width: 100%; max-width: 400px; height: 300px; border-radius: 10px; object-fit: cover; background: #f0f0f0;"
+                            alt="Captured image will appear here"
+                        >
                     </div>
+
                     <div class="manual-entry">
                         <h4>Manual Entry</h4>
                         <div class="form-group">
-                            <label for="studentId">Student ID:</label>
+                            <label for="studentId">Student ID</label>
                             <input type="text" id="studentId" placeholder="Enter student ID">
                         </div>
                         <div class="form-group">
-                            <label for="studentName">Student Name:</label>
+                            <label for="studentName">Student Name</label>
                             <input type="text" id="studentName" placeholder="Enter student name">
                         </div>
                         <button class="btn btn-success" id="manualMark">Mark Attendance</button>
                     </div>
                 </div>
             </div>
+
             <div class="attendance-section">
                 <div class="attendance-header">
                     <h3>📋 Today's Attendance</h3>
-                    <button class="btn btn-primary" id="exportBtn">Export Report</button>
+                    <button class="btn btn-primary" id="exportBtn">Export CSV</button>
                 </div>
-                <div class="attendance-list" id="attendanceList">
-                </div>
+                <div class="attendance-list" id="attendanceList"></div>
             </div>
         </div>
     </div>
@@ -389,37 +406,79 @@
     <div id="notification" class="notification"></div>
 
     <script>
-        class SmartAttendanceSystem {
+    
+        class AttendanceApp {
             constructor() {
                 this.stream = null;
                 this.currentFacingMode = 'user';
-                this.attendance = JSON.parse(localStorage.getItem('attendance')) || [];
+                this.attendance = this.loadAttendance();
                 this.students = [
-                    { id: 'STU001', name: 'Pratham Shetty', email: 'pratham@school.edu', photo: 'https://via.placeholder.com/150/2196F3/white?text=JD' },
-                    { id: 'STU002', name: 'Ishaan', email: 'ishaan@school.edu', photo: 'https://via.placeholder.com/150/4CAF50/white?text=JS' },
-                    { id: 'STU003', name: 'anish', email: 'anish@school.edu', photo: 'https://via.placeholder.com/150/ff9800/white?text=MJ' },
-                    { id: 'STU004', name: 'Sarah ', email: 'sarah@school.edu', photo: 'https://via.placeholder.com/150/9C27B0/white?text=SW' },
-                    { id: 'STU005', name: 'jitin', email: 'jitin@school.edu', photo: 'https://via.placeholder.com/150/F44336/white?text=DB' }
+                    { id: 'STU001', name: 'Pratham Shetty', email: 'pratham@school.edu', photo: 'https://via.placeholder.com/150/2196F3/ffffff?text=PS' },
+                    { id: 'STU002', name: 'Ishaan',          email: 'ishaan@school.edu',  photo: 'https://via.placeholder.com/150/4CAF50/ffffff?text=I' },
+                    { id: 'STU003', name: 'Anish',           email: 'anish@school.edu',   photo: 'https://via.placeholder.com/150/ff9800/ffffff?text=A' },
+                    { id: 'STU004', name: 'Sarah',           email: 'sarah@school.edu',   photo: 'https://via.placeholder.com/150/9C27B0/ffffff?text=S' },
+                    { id: 'STU005', name: 'Jitin',           email: 'jitin@school.edu',   photo: 'https://via.placeholder.com/150/F44336/ffffff?text=J' }
                 ];
-                
-                this.initializeEventListeners();
+
+                this.cacheDom();
+                this.bindEvents();
                 this.updateAttendanceList();
                 this.updateStats();
             }
 
-            initializeEventListeners() {
-                document.getElementById('startCamera').addEventListener('click', () => this.startCamera());
-                document.getElementById('stopCamera').addEventListener('click', () => this.stopCamera());
-                document.getElementById('captureBtn').addEventListener('click', () => this.captureAndMark());
-                document.getElementById('flipCamera').addEventListener('click', () => this.flipCamera());
-                document.getElementById('manualMark').addEventListener('click', () => this.manualMarkAttendance());
-                document.getElementById('exportBtn').addEventListener('click', () => this.exportReport());
+            cacheDom() {
+                this.videoEl = document.getElementById('video');
+                this.canvasEl = document.getElementById('canvas');
+                this.capturedImageEl = document.getElementById('capturedImage');
+
+                this.startBtn = document.getElementById('startCamera');
+                this.stopBtn = document.getElementById('stopCamera');
+                this.captureBtn = document.getElementById('captureBtn');
+                this.flipBtn = document.getElementById('flipCamera');
+
+                this.manualMarkBtn = document.getElementById('manualMark');
+                this.exportBtn = document.getElementById('exportBtn');
+
+                this.studentIdInput = document.getElementById('studentId');
+                this.studentNameInput = document.getElementById('studentName');
+
+                this.attendanceListEl = document.getElementById('attendanceList');
+
+                this.totalStudentsEl = document.getElementById('totalStudents');
+                this.presentStudentsEl = document.getElementById('presentStudents');
+                this.absentStudentsEl = document.getElementById('absentStudents');
+                this.attendanceRateEl = document.getElementById('attendanceRate');
+
+                this.notificationEl = document.getElementById('notification');
+            }
+
+            bindEvents() {
+                this.startBtn.addEventListener('click', () => this.startCamera());
+                this.stopBtn.addEventListener('click', () => this.stopCamera());
+                this.captureBtn.addEventListener('click', () => this.captureAndMark());
+                this.flipBtn.addEventListener('click', () => this.flipCamera());
+
+                this.manualMarkBtn.addEventListener('click', () => this.manualMarkAttendance());
+                this.exportBtn.addEventListener('click', () => this.exportReport());
+            }
+
+            loadAttendance() {
+                try {
+                    const stored = localStorage.getItem('attendance');
+                    return stored ? JSON.parse(stored) : [];
+                } catch (e) {
+                    return [];
+                }
+            }
+
+            saveAttendance() {
+                localStorage.setItem('attendance', JSON.stringify(this.attendance));
             }
 
             async startCamera() {
                 try {
                     const constraints = {
-                        video: { 
+                        video: {
                             facingMode: this.currentFacingMode,
                             width: { ideal: 1280 },
                             height: { ideal: 720 }
@@ -428,17 +487,16 @@
                     };
 
                     this.stream = await navigator.mediaDevices.getUserMedia(constraints);
-                    const video = document.getElementById('video');
-                    video.srcObject = this.stream;
+                    this.videoEl.srcObject = this.stream;
 
-                    document.getElementById('startCamera').disabled = true;
-                    document.getElementById('captureBtn').disabled = false;
-                    document.getElementById('stopCamera').disabled = false;
-                    document.getElementById('flipCamera').disabled = false;
+                    this.startBtn.disabled = true;
+                    this.captureBtn.disabled = false;
+                    this.stopBtn.disabled = false;
+                    this.flipBtn.disabled = false;
 
-                    this.showNotification('Camera started successfully!', 'success');
+                    this.showNotification('Camera started.', 'success');
                 } catch (error) {
-                    console.error('Error accessing camera:', error);
+                    console.error('Camera error:', error);
                     this.showNotification('Error accessing camera: ' + error.message, 'error');
                 }
             }
@@ -449,61 +507,61 @@
                     this.stream = null;
                 }
 
-                const video = document.getElementById('video');
-                video.srcObject = null;
+                this.videoEl.srcObject = null;
 
-                document.getElementById('startCamera').disabled = false;
-                document.getElementById('captureBtn').disabled = true;
-                document.getElementById('stopCamera').disabled = true;
-                document.getElementById('flipCamera').disabled = true;
+                this.startBtn.disabled = false;
+                this.captureBtn.disabled = true;
+                this.stopBtn.disabled = true;
+                this.flipBtn.disabled = true;
 
-                this.showNotification('Camera stopped', 'info');
+                this.showNotification('Camera stopped.', 'info');
             }
 
             flipCamera() {
                 this.currentFacingMode = this.currentFacingMode === 'user' ? 'environment' : 'user';
                 this.stopCamera();
-                setTimeout(() => this.startCamera(), 100);
+                setTimeout(() => this.startCamera(), 120);
             }
 
             captureAndMark() {
-                const video = document.getElementById('video');
-                const canvas = document.getElementById('canvas');
-                const context = canvas.getContext('2d');
-                const capturedImage = document.getElementById('capturedImage');
-                canvas.width = video.videoWidth;
-                canvas.height = video.videoHeight;
-                context.drawImage(video, 0, 0);
-                const imageDataUrl = canvas.toDataURL('image/jpeg');
-                capturedImage.src = imageDataUrl;
-                this.simulateFaceRecognition(imageDataUrl);
-            }
-
-            simulateFaceRecognition(imageData) {
-               
-                const randomStudent = this.students[Math.floor(Math.random() * this.students.length)];
-                
-                setTimeout(() => {
-                    this.markAttendance(randomStudent.id, randomStudent.name, 'Automatic - Face Recognition');
-                    this.showNotification(`Attendance marked for ${randomStudent.name}`, 'success');
-                }, 1500);
-            }
-
-            manualMarkAttendance() {
-                const studentId = document.getElementById('studentId').value.trim();
-                const studentName = document.getElementById('studentName').value.trim();
-
-                if (!studentId || !studentName) {
-                    this.showNotification('Please enter both Student ID and Name', 'error');
+                if (!this.stream) {
+                    this.showNotification('Start the camera first.', 'error');
                     return;
                 }
 
-                this.markAttendance(studentId, studentName, 'Manual Entry');
-                this.showNotification(`Attendance marked for ${studentName}`, 'success');
+                const ctx = this.canvasEl.getContext('2d');
+                this.canvasEl.width = this.videoEl.videoWidth;
+                this.canvasEl.height = this.videoEl.videoHeight;
+                ctx.drawImage(this.videoEl, 0, 0);
 
-            
-                document.getElementById('studentId').value = '';
-                document.getElementById('studentName').value = '';
+                const imageDataUrl = this.canvasEl.toDataURL('image/jpeg');
+                this.capturedImageEl.src = imageDataUrl;
+
+                // Prototype: simulate face recognition (random student)
+                this.simulateFaceRecognition();
+            }
+
+            simulateFaceRecognition() {
+                const randomStudent = this.students[Math.floor(Math.random() * this.students.length)];
+
+                setTimeout(() => {
+                    this.markAttendance(randomStudent.id, randomStudent.name, 'Automatic (Simulated Face Recognition)');
+                }, 800);
+            }
+
+            manualMarkAttendance() {
+                const id = this.studentIdInput.value.trim();
+                const name = this.studentNameInput.value.trim();
+
+                if (!id || !name) {
+                    this.showNotification('Please enter both Student ID and Name.', 'error');
+                    return;
+                }
+
+                this.markAttendance(id, name, 'Manual Entry');
+
+                this.studentIdInput.value = '';
+                this.studentNameInput.value = '';
             }
 
             markAttendance(studentId, studentName, method) {
@@ -511,17 +569,16 @@
                 const today = now.toISOString().split('T')[0];
                 const time = now.toLocaleTimeString();
 
-        
-                const existingRecord = this.attendance.find(record => 
-                    record.studentId === studentId && record.date === today
+                const alreadyMarked = this.attendance.find(
+                    r => r.studentId === studentId && r.date === today
                 );
 
-                if (existingRecord) {
-                    this.showNotification(`${studentName} is already marked present today`, 'info');
+                if (alreadyMarked) {
+                    this.showNotification(`${studentName} is already marked present today.`, 'info');
                     return;
                 }
 
-                const attendanceRecord = {
+                const newRecord = {
                     studentId,
                     studentName,
                     date: today,
@@ -530,32 +587,41 @@
                     timestamp: now.getTime()
                 };
 
-                this.attendance.push(attendanceRecord);
+                this.attendance.push(newRecord);
                 this.saveAttendance();
                 this.updateAttendanceList();
                 this.updateStats();
+
+                this.showNotification(`Attendance marked for ${studentName}.`, 'success');
             }
 
             updateAttendanceList() {
                 const today = new Date().toISOString().split('T')[0];
-                const todayAttendance = this.attendance.filter(record => record.date === today);
-                
-                const attendanceList = document.getElementById('attendanceList');
-                
-                if (todayAttendance.length === 0) {
-                    attendanceList.innerHTML = '<p style="text-align: center; color: #666; padding: 20px;">No attendance records for today</p>';
+                const todayRecords = this.attendance.filter(r => r.date === today);
+
+                if (todayRecords.length === 0) {
+                    this.attendanceListEl.innerHTML =
+                        '<p style="text-align:center; color:#666; padding:20px;">No attendance records for today.</p>';
                     return;
                 }
 
-                attendanceList.innerHTML = todayAttendance.map(record => {
-                    const student = this.students.find(s => s.id === record.studentId) || {
-                        photo: `https://via.placeholder.com/150/666/white?text=${record.studentName.split(' ').map(n => n[0]).join('')}`
-                    };
+                const html = todayRecords.map(record => {
+                    const student = this.students.find(s => s.id === record.studentId);
+                    const initials = record.studentName
+                        .split(' ')
+                        .filter(Boolean)
+                        .map(n => n[0])
+                        .join('')
+                        .toUpperCase();
+
+                    const photoUrl = student
+                        ? student.photo
+                        : `https://via.placeholder.com/150/666/ffffff?text=${encodeURIComponent(initials)}`;
 
                     return `
                         <div class="attendance-item">
                             <div class="student-info">
-                                <img src="${student.photo}" alt="${record.studentName}" class="student-avatar">
+                                <img src="${photoUrl}" alt="${record.studentName}" class="student-avatar">
                                 <div class="student-details">
                                     <h4>${record.studentName}</h4>
                                     <p>ID: ${record.studentId} | Time: ${record.time}</p>
@@ -566,78 +632,74 @@
                         </div>
                     `;
                 }).join('');
+
+                this.attendanceListEl.innerHTML = html;
             }
 
             updateStats() {
                 const today = new Date().toISOString().split('T')[0];
-                const todayAttendance = this.attendance.filter(record => record.date === today);
-                
-                const totalStudents = this.students.length;
-                const presentStudents = todayAttendance.length;
-                const absentStudents = totalStudents - presentStudents;
-                const attendanceRate = totalStudents > 0 ? Math.round((presentStudents / totalStudents) * 100) : 0;
+                const todayRecords = this.attendance.filter(r => r.date === today);
 
-                document.getElementById('totalStudents').textContent = totalStudents;
-                document.getElementById('presentStudents').textContent = presentStudents;
-                document.getElementById('absentStudents').textContent = absentStudents;
-                document.getElementById('attendanceRate').textContent = attendanceRate + '%';
+                const total = this.students.length;
+                const present = todayRecords.length;
+                const absent = Math.max(total - present, 0);
+                const rate = total > 0 ? Math.round((present / total) * 100) : 0;
+
+                this.totalStudentsEl.textContent = total;
+                this.presentStudentsEl.textContent = present;
+                this.absentStudentsEl.textContent = absent;
+                this.attendanceRateEl.textContent = rate + '%';
             }
 
             exportReport() {
                 const today = new Date().toISOString().split('T')[0];
-                const todayAttendance = this.attendance.filter(record => record.date === today);
-                
-                if (todayAttendance.length === 0) {
-                    this.showNotification('No attendance data to export', 'error');
+                const todayRecords = this.attendance.filter(r => r.date === today);
+
+                if (todayRecords.length === 0) {
+                    this.showNotification('No attendance data to export.', 'error');
                     return;
                 }
 
-                let csvContent = "data:text/csv;charset=utf-8,";
-                csvContent += "Student ID,Student Name,Date,Time,Method\n";
-                
-                todayAttendance.forEach(record => {
-                    csvContent += `${record.studentId},${record.studentName},${record.date},${record.time},${record.method}\n`;
+                let csv = 'Student ID,Student Name,Date,Time,Method\n';
+                todayRecords.forEach(r => {
+                    csv += `${r.studentId},${r.studentName},${r.date},${r.time},${r.method}\n`;
                 });
 
-                const encodedUri = encodeURI(csvContent);
-                const link = document.createElement("a");
-                link.setAttribute("href", encodedUri);
-                link.setAttribute("download", `attendance_report_${today}.csv`);
+                const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+                const url = URL.createObjectURL(blob);
+
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = `attendance_${today}.csv`;
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
 
-                this.showNotification('Attendance report exported successfully!', 'success');
-            }
-
-            saveAttendance() {
-                localStorage.setItem('attendance', JSON.stringify(this.attendance));
+                URL.revokeObjectURL(url);
+                this.showNotification('Attendance report exported as CSV.', 'success');
             }
 
             showNotification(message, type) {
-                const notification = document.getElementById('notification');
-                notification.textContent = message;
-                notification.className = `notification ${type}`;
-                notification.classList.add('show');
+                this.notificationEl.textContent = message;
+                this.notificationEl.className = 'notification ' + type;
+                this.notificationEl.classList.add('show');
 
-                setTimeout(() => {
-                    notification.classList.remove('show');
+                clearTimeout(this._notificationTimeout);
+                this._notificationTimeout = setTimeout(() => {
+                    this.notificationEl.classList.remove('show');
                 }, 3000);
             }
         }
 
-
         document.addEventListener('DOMContentLoaded', () => {
-            new SmartAttendanceSystem();
+            window.attendanceApp = new AttendanceApp();
         });
 
-    
         window.addEventListener('beforeunload', () => {
-            if (window.attendanceSystem && window.attendanceSystem.stream) {
-                window.attendanceSystem.stopCamera();
+            if (window.attendanceApp && window.attendanceApp.stream) {
+                window.attendanceApp.stopCamera();
             }
         });
     </script>
 </body>
-
 </html>
