@@ -323,7 +323,6 @@
         </div>
 
         <div class="main-content">
-            <!-- Statistics Section -->
             <div class="stats-section">
                 <div class="stat-card">
                     <div class="stat-number" id="totalStudents">0</div>
@@ -342,8 +341,6 @@
                     <div class="stat-label">Attendance Rate</div>
                 </div>
             </div>
-
-            <!-- Camera Section -->
             <div class="camera-section">
                 <div class="camera-container">
                     <h3>📷 Camera Feed</h3>
@@ -378,21 +375,17 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Attendance List Section -->
             <div class="attendance-section">
                 <div class="attendance-header">
                     <h3>📋 Today's Attendance</h3>
                     <button class="btn btn-primary" id="exportBtn">Export Report</button>
                 </div>
                 <div class="attendance-list" id="attendanceList">
-                    <!-- Attendance items will be populated here -->
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Notification System -->
     <div id="notification" class="notification"></div>
 
     <script>
@@ -478,25 +471,16 @@
                 const canvas = document.getElementById('canvas');
                 const context = canvas.getContext('2d');
                 const capturedImage = document.getElementById('capturedImage');
-
-                // Set canvas dimensions to match video
                 canvas.width = video.videoWidth;
                 canvas.height = video.videoHeight;
-
-                // Draw current video frame to canvas
                 context.drawImage(video, 0, 0);
-
-                // Convert canvas to image
                 const imageDataUrl = canvas.toDataURL('image/jpeg');
                 capturedImage.src = imageDataUrl;
-
-                // Simulate face recognition and attendance marking
                 this.simulateFaceRecognition(imageDataUrl);
             }
 
             simulateFaceRecognition(imageData) {
-                // In a real system, this would call a face recognition API
-                // For demo purposes, we'll randomly select a student
+               
                 const randomStudent = this.students[Math.floor(Math.random() * this.students.length)];
                 
                 setTimeout(() => {
@@ -517,7 +501,7 @@
                 this.markAttendance(studentId, studentName, 'Manual Entry');
                 this.showNotification(`Attendance marked for ${studentName}`, 'success');
 
-                // Clear form
+            
                 document.getElementById('studentId').value = '';
                 document.getElementById('studentName').value = '';
             }
@@ -527,7 +511,7 @@
                 const today = now.toISOString().split('T')[0];
                 const time = now.toLocaleTimeString();
 
-                // Check if student is already marked present today
+        
                 const existingRecord = this.attendance.find(record => 
                     record.studentId === studentId && record.date === today
                 );
@@ -642,12 +626,12 @@
             }
         }
 
-        // Initialize the attendance system when the page loads
+
         document.addEventListener('DOMContentLoaded', () => {
             new SmartAttendanceSystem();
         });
 
-        // Handle page unload to stop camera
+    
         window.addEventListener('beforeunload', () => {
             if (window.attendanceSystem && window.attendanceSystem.stream) {
                 window.attendanceSystem.stopCamera();
@@ -655,4 +639,5 @@
         });
     </script>
 </body>
+
 </html>
